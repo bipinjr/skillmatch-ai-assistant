@@ -17,7 +17,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AISYNC — Rank resumes against any job description" },
-...
+      {
+        name: "description",
+        content:
+          "AISYNC screens a batch of resumes against any job description and returns an explainable, ranked shortlist.",
+      },
       { property: "og:title", content: "AISYNC — AI resume screening system" },
       {
         property: "og:description",
