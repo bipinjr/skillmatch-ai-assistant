@@ -16,13 +16,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SkillMatch AI — Rank resumes against any job description" },
-      {
-        name: "description",
-        content:
-          "Paste a job description, drop in a batch of resumes, and get an explainable ranked shortlist with matched skills, gaps and AI rationale.",
-      },
-      { property: "og:title", content: "SkillMatch AI — AI resume screening" },
+      { title: "AISYNC — Rank resumes against any job description" },
+...
+      { property: "og:title", content: "AISYNC — AI resume screening system" },
       {
         property: "og:description",
         content:
