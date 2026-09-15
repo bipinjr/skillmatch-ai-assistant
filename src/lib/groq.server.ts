@@ -1,5 +1,5 @@
 /**
- * Groq (Llama 3.3 70B Versatile) helper — server-only.
+ * Groq (openai/gpt-oss-120b) helper — server-only.
  */
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
