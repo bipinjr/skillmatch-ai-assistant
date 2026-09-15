@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * SkillMatch AI design system.
+ * AISYNC design system.
  * Indigo/violet recruiter tooling palette with semantic match-score tokens.
  * All colors are oklch and exposed as Tailwind utilities via @theme inline.
  */
