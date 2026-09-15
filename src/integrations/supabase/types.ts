@@ -14,7 +14,185 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      candidates: {
+        Row: {
+          blob_url: string | null
+          created_at: string
+          email: string | null
+          error_message: string | null
+          file_name: string
+          full_name: string | null
+          id: string
+          job_description_id: string | null
+          parsed_education: Json | null
+          parsed_experience: Json | null
+          parsed_skills: string[]
+          phone: string | null
+          raw_text: string | null
+          status: string
+          total_experience_years: number | null
+          updated_at: string
+        }
+        Insert: {
+          blob_url?: string | null
+          created_at?: string
+          email?: string | null
+          error_message?: string | null
+          file_name: string
+          full_name?: string | null
+          id?: string
+          job_description_id?: string | null
+          parsed_education?: Json | null
+          parsed_experience?: Json | null
+          parsed_skills?: string[]
+          phone?: string | null
+          raw_text?: string | null
+          status?: string
+          total_experience_years?: number | null
+          updated_at?: string
+        }
+        Update: {
+          blob_url?: string | null
+          created_at?: string
+          email?: string | null
+          error_message?: string | null
+          file_name?: string
+          full_name?: string | null
+          id?: string
+          job_description_id?: string | null
+          parsed_education?: Json | null
+          parsed_experience?: Json | null
+          parsed_skills?: string[]
+          phone?: string | null
+          raw_text?: string | null
+          status?: string
+          total_experience_years?: number | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "candidates_job_description_id_fkey"
+            columns: ["job_description_id"]
+            isOneToOne: false
+            referencedRelation: "job_descriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      job_descriptions: {
+        Row: {
+          company: string | null
+          created_at: string
+          education_requirement: string | null
+          id: string
+          max_experience_years: number | null
+          min_experience_years: number | null
+          preferred_skills: string[]
+          raw_text: string
+          required_skills: string[]
+          role_summary: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          education_requirement?: string | null
+          id?: string
+          max_experience_years?: number | null
+          min_experience_years?: number | null
+          preferred_skills?: string[]
+          raw_text: string
+          required_skills?: string[]
+          role_summary?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          education_requirement?: string | null
+          id?: string
+          max_experience_years?: number | null
+          min_experience_years?: number | null
+          preferred_skills?: string[]
+          raw_text?: string
+          required_skills?: string[]
+          role_summary?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      match_results: {
+        Row: {
+          ai_summary: string | null
+          candidate_id: string | null
+          concerns: string | null
+          created_at: string
+          id: string
+          job_description_id: string | null
+          keyword_score: number | null
+          matched_skills: string[]
+          missing_skills: string[]
+          overall_score: number
+          rank: number | null
+          semantic_score: number | null
+          strengths: string | null
+          updated_at: string
+          user_status: string
+        }
+        Insert: {
+          ai_summary?: string | null
+          candidate_id?: string | null
+          concerns?: string | null
+          created_at?: string
+          id?: string
+          job_description_id?: string | null
+          keyword_score?: number | null
+          matched_skills?: string[]
+          missing_skills?: string[]
+          overall_score: number
+          rank?: number | null
+          semantic_score?: number | null
+          strengths?: string | null
+          updated_at?: string
+          user_status?: string
+        }
+        Update: {
+          ai_summary?: string | null
+          candidate_id?: string | null
+          concerns?: string | null
+          created_at?: string
+          id?: string
+          job_description_id?: string | null
+          keyword_score?: number | null
+          matched_skills?: string[]
+          missing_skills?: string[]
+          overall_score?: number
+          rank?: number | null
+          semantic_score?: number | null
+          strengths?: string | null
+          updated_at?: string
+          user_status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "match_results_candidate_id_fkey"
+            columns: ["candidate_id"]
+            isOneToOne: false
+            referencedRelation: "candidates"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_results_job_description_id_fkey"
+            columns: ["job_description_id"]
+            isOneToOne: false
+            referencedRelation: "job_descriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
