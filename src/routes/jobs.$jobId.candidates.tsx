@@ -222,8 +222,11 @@ function CandidateDashboard() {
     const link = document.createElement("a");
     link.href = url;
     link.download = `shortlist-${jobQuery.data?.title ?? "job"}.csv`.replace(/\s+/g, "-");
+    document.body.appendChild(link);
     link.click();
-    URL.revokeObjectURL(url);
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+    toast.success(`Exported ${shortlisted.length} shortlisted candidate(s)`);
   }
 
   return (
