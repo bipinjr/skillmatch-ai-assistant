@@ -33,13 +33,13 @@ import {
 export const Route = createFileRoute("/jobs/$jobId/candidates")({
   head: () => ({
     meta: [
-      { title: "Ranked candidates — SkillMatch AI" },
+      { title: "Ranked candidates — AISYNC" },
       {
         name: "description",
         content:
           "An explainable, ranked shortlist: match scores, matched and missing skills, AI rationale, strengths and concerns for every resume.",
       },
-      { property: "og:title", content: "Ranked candidates — SkillMatch AI" },
+      { property: "og:title", content: "Ranked candidates — AISYNC" },
       {
         property: "og:description",
         content: "Review scored candidates with matched skills, gaps and AI rationale, then export your shortlist.",
@@ -231,13 +231,21 @@ function CandidateDashboard() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <Link
-        to="/jobs/$jobId"
-        params={{ jobId }}
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
-      >
-        <ArrowLeft className="size-4" /> Back to job description
-      </Link>
+      <div className="flex items-center gap-4">
+        <Link
+          to="/jobs/$jobId"
+          params={{ jobId }}
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" /> Back to job description
+        </Link>
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" /> Home
+        </Link>
+      </div>
 
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
         <div>

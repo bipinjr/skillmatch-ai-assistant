@@ -24,13 +24,13 @@ import { Progress } from "@/components/ui/progress";
 export const Route = createFileRoute("/jobs/$jobId/")({
   head: () => ({
     meta: [
-      { title: "Job breakdown & resume upload — SkillMatch AI" },
+      { title: "Job breakdown & resume upload — AISYNC" },
       {
         name: "description",
         content:
           "Review the extracted required skills, experience and education for this role, then upload a batch of resumes to screen.",
       },
-      { property: "og:title", content: "Job breakdown & resume upload — SkillMatch AI" },
+      { property: "og:title", content: "Job breakdown & resume upload — AISYNC" },
       {
         property: "og:description",
         content: "Check the parsed role requirements, then drop in resumes to screen against them.",
